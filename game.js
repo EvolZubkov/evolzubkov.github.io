@@ -20,8 +20,8 @@ const targetFrameTime = 1000 / targetFPS;
 const simulationSpeedMultiplier = 1.8;
 
 function resetPuck() {
-  puck.x = canvas.width / 3;
-  puck.y = canvas.height / 3;
+  puck.x = canvas.width / 2;
+  puck.y = canvas.height / 2;
   puck.dx = 0;
   puck.dy = 0;
 }
