@@ -1,2 +1,0 @@
-<div id="scoreBoard">Player: 0 | AI: 0</div>
-<canvas id="gameCanvas" width="400" height="600"></canvas>
