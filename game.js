@@ -20,12 +20,26 @@ const targetFrameTime = 1000 / targetFPS;
 const simulationSpeedMultiplier = 1.8;
 
 function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  if (window.innerWidth <= 768) {
+    // Мобильная версия
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    paddle.radius = 25 * 1.5;  // Увеличиваем радиус на 1.5x
+    aiPaddle.radius = 25 * 1.5;
+    puck.radius = 15 * 1.5;
+  } else {
+    // Версия для ПК
+    canvas.width = 400;
+    canvas.height = 600;
+    paddle.radius = 25;  // Размер по умолчанию
+    aiPaddle.radius = 25;
+    puck.radius = 15;
+  }
 }
 
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
+
 
 function resetPuck() {
   puck.x = canvas.width / 2;
