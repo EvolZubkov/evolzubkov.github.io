@@ -118,6 +118,13 @@ function drawExplosion() {
     }
   });
 }
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
 
 function movePaddle(x, y) {
   let r = canvas.getBoundingClientRect();
