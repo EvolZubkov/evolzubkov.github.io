@@ -19,6 +19,14 @@ const targetFPS = 60;
 const targetFrameTime = 1000 / targetFPS;
 const simulationSpeedMultiplier = 1.8;
 
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
 function resetPuck() {
   puck.x = canvas.width / 2;
   puck.y = canvas.height / 2;
@@ -118,13 +126,7 @@ function drawExplosion() {
     }
   });
 }
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-}
 
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
 
 function movePaddle(x, y) {
   let r = canvas.getBoundingClientRect();
