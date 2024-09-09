@@ -22,8 +22,8 @@ const simulationSpeedMultiplier = 1.8;
 function resizeCanvas() {
   if (window.innerWidth <= 768) {
     // Мобильная версия
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth - 10;
+    canvas.height = window.innerHeight - 10;
     paddle.radius = 25 * 1.5;  // Увеличиваем радиус на 1.5x
     aiPaddle.radius = 25 * 1.5;
     puck.radius = 15 * 1.5;
