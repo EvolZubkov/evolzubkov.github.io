@@ -31,8 +31,9 @@
         </div>
     
         <!-- Игровые карточки -->
-        <div v-for="(card, index) in cards" :key="index" :class="[{'down': card.down && !card.matched, 'up': !card.down, 'matched': card.matched}, 'card']" v-on:click="handleClick(card)">
-            <i :class="'fas ' + card.icon"></i>
+        <div class="card" v-for="card in cards" @click="handleClick(card)" :class="{ down: card.down, matched: card.matched }">
+            <!-- Меняем Font Awesome на иконки SVG -->
+            <img v-if="!card.down || card.matched" :src="card.icon" alt="icon" class="card-icon"/>
         </div>
     </div>
 
